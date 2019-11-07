@@ -1,0 +1,58 @@
+<nb-card>
+  <nb-card-header>Achievement Filter</nb-card-header>
+  <nb-card-body>
+    <div class="form-group">
+      <select class="form-control">
+        <option value="" disabled selected>Selecione o tipo de filtro que deseja utilizar...</option>
+        <option>Minsk</option>
+        <option>Gomel</option>
+        <option>Brest</option>
+        <option>Grodno</option>
+        <option>Mogilev</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-append">
+        <button class="btn btn-danger input-group-text">
+          Search
+        </button>
+      </span>
+    </div>
+    <div>
+      <input nbInput placeholder="Form Picker" [nbDatepicker]="formpicker">
+      <nb-datepicker #formpicker></nb-datepicker>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+
+<nb-card>
+  <nb-card-header>
+    Results
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="incidente" [source]="data_in" (deleteConfirm)="onDeleteConfirm($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-header>
+    Results
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="solicitacoes" [source]="data_sr" (deleteConfirm)="onDeleteConfirm($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-header>
+    Results
+  </nb-card-header>
+  <nb-card-body>
+    <ng2-smart-table [settings]="atendimento" [source]="data_at" (deleteConfirm)="onDeleteConfirm($event)">
+    </ng2-smart-table>
+  </nb-card-body>
+</nb-card>

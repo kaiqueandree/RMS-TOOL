@@ -1,0 +1,53 @@
+@import 'datatable';
+
+body {
+  .scrollable-container {
+    transition: filter 250ms;
+    filter: blur(0) grayscale(0);
+  }
+
+  &.blur-app .scrollable-container {
+    filter: blur(2px) grayscale(0.5);
+  }
+
+  .cdk-overlay-container {
+    // bootstrap modal has z-index of 1050
+    // and cdk, by default, 1000
+    // here we change the cdk components to
+    // overlay the bootstrap modal, when required
+    // for example, a snackBar
+    z-index: 1051;
+  }
+}
+
+.btn.btn-badge {
+  padding: 0 !important;
+}
+
+input {
+
+  &.disabled,
+  [disabled=true] {
+    color: gray !important;
+    background: lightgray !important;
+    border-color: lightgray !important;
+    cursor: not-allowed !important;
+  }
+}
+
+.ng-dirty:not(.masked-input),
+.ng-touched {
+  &.ng-invalid {
+    @extend .form-control-danger;
+  }
+
+  &.ng-valid {
+    @extend .form-control-success;
+  }
+}
+
+.group-invalid {
+  .form-control {
+    border-color: #ff4c6a !important;
+  }
+}

@@ -1,0 +1,18 @@
+<div class="header-container left">
+  <div class="logo-containter">
+    <a (click)="toggleSidebar()" href="#" class="navigation">
+      <i class="fas fa-bars fa-xs"></i>
+    </a>
+    <div class="logo" (click)="goToHome()"><span>RMS</span></div>
+      <img src="" />
+  </div>
+</div>
+
+<div class="header-container">
+  <nb-actions class="normal" size="medium" style="cursor: pointer">
+      <nb-action class="control-item" disabled icon="far fa-bell fa-2x"></nb-action>
+    <nb-action>
+      <nb-user [nbContextMenu]="loginMenu" [name]="login?.name" [picture]="login?.picture"></nb-user>
+    </nb-action>
+  </nb-actions>
+</div>
